@@ -9,7 +9,7 @@ public class Day1Solutoin {
     public static void main(String[] args) {
 
 
-        OptionalInt max = Arrays.stream(Day1Data.get()
+        OptionalInt bestElf = Arrays.stream(Day1Data.get()
                         .split("\n\n"))
                 .map(s -> s.split("\n"))
                 .map(d -> Arrays.stream(d).mapToInt(Integer::parseInt).sum())
@@ -18,18 +18,18 @@ public class Day1Solutoin {
                 .max();
 
         // get the best elf
-        System.out.println(max.getAsInt());
+        System.out.println(bestElf.getAsInt());
 
-
-        List<Integer> collect = Arrays.stream(Day1Data.get()
+        int topThreeElfs = Arrays.stream(Day1Data.get()
                         .split("\n\n"))
                 .map(s -> s.split("\n"))
                 .map(d -> Arrays.stream(d).mapToInt(Integer::parseInt).sum())
                 .collect(Collectors.toList())
-                .stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+                .stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList())
+                .stream().limit(3).mapToInt(Integer::intValue).sum();
 
         // get top 3 elfs sum
-        System.out.println(collect.get(0) + collect.get(1) + collect.get(2));
+        System.out.println(topThreeElfs);
     }
 
 }
