@@ -3,12 +3,10 @@ package day1;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Day1Solutoin {
-
+public class Day1Answer {
 
     public static void main(String[] args) {
-
-
+        
         OptionalInt bestElf = Arrays.stream(Day1Data.get()
                         .split("\n\n"))
                 .map(s -> s.split("\n"))
