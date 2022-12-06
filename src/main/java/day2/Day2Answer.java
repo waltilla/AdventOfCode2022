@@ -34,16 +34,7 @@ public class Day2Answer {
         System.out.println(total);
     }
 
-    public static String convertToSameValue(String hand) {
-        switch (hand) {
-            case "Y" -> {return "B";}
-            case "X" -> {return "A";}
-            default  -> {return "C";}
-        }
-    }
-
     public static Integer score(String opponent, String me) {
-
         if (me.equals(opponent)) {
             return 3;
         } else if (
@@ -55,23 +46,20 @@ public class Day2Answer {
             return 0;
     }
 
-    public static Integer handValue(String hand) {
-        int i = 0;
+    public static String convertToSameValue(String hand) {
         switch (hand) {
-            case "A" -> {
-                i = 1;
-            }
-            case "B" -> {
-                i = 2;
-            }
-            case "C" -> {
-                i = 3;
-            }
-            default -> {
-                i = 0;
-            }
+            case "Y" -> {return "B";}
+            case "X" -> {return "A";}
+            default  -> {return "C";}
         }
-        return i;
+    }
+
+    public static Integer handValue(String hand) {
+        switch (hand) {
+            case "A" -> {return 1;}
+            case "B" -> {return 2;}
+            default  -> {return 3;}
+        }
     }
 
     public static String elfSuperStrategy(String strat) {
