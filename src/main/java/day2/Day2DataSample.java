@@ -1,6 +1,6 @@
 package day2;
 
-public class Day2Data2 {
+public class Day2DataSample {
 
     public static String get(){
         return "A Y\n" +
