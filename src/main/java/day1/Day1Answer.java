@@ -7,8 +7,7 @@ public class Day1Answer {
 
     public static void main(String[] args) {
         
-        OptionalInt bestElf = Arrays.stream(Day1Data.get()
-                        .split("\n\n"))
+        OptionalInt bestElf = Arrays.stream(Day1Data.get().split("\n\n"))
                 .map(s -> s.split("\n"))
                 .map(d -> Arrays.stream(d).mapToInt(Integer::parseInt).sum())
                 .collect(Collectors.toList())
@@ -18,8 +17,7 @@ public class Day1Answer {
         // get the best elf
         System.out.println(bestElf.getAsInt());
 
-        int topThreeElfs = Arrays.stream(Day1Data.get()
-                        .split("\n\n"))
+        int topThreeElfs = Arrays.stream(Day1Data.get().split("\n\n"))
                 .map(s -> s.split("\n"))
                 .map(d -> Arrays.stream(d).mapToInt(Integer::parseInt).sum())
                 .collect(Collectors.toList())
